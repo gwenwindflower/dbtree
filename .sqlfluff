@@ -13,3 +13,6 @@ capitalisation_policy = lower
 
 [sqlfluff:rules:convention.select_trailing_comma]
 select_clause_trailing_comma = require
+
+[sqlfluff:rules:references.special_chars]
+quoted_identifiers_policy = aliases

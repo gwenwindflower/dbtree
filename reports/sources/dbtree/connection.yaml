@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: dbtree
+type: duckdb
+options:
+  filename: ../../../dbtree.db
