@@ -11,3 +11,4 @@ logs
 .user.yml
 
 dbtree.db
+dbtree.db.wal

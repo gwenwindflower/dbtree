@@ -14,6 +14,10 @@ species as (
 
     from trees
 
+    where
+        species is not null
+        and species != 'Tree(s) ::'
+
     group by 1
 
 )
