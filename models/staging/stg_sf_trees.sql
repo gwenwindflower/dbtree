@@ -18,7 +18,7 @@ staged as (
         planttype as plant_type,
         qcaretaker as caretaker,
         qcareassistant as care_assistant,
-        plantdate as plant_date,
+        plantdate as planted_at_date,
         dbh,
         plotsize as plot_size,
         permitnotes as permit_notes,

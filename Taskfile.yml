@@ -1,6 +1,9 @@
 version: "3"
 
 tasks:
+  t:
+    cmds:
+      - source .venv/bin/activate && dbt build
   bi:
     cmds:
       - npm --prefix ./reports run sources && npm --prefix ./reports run dev
