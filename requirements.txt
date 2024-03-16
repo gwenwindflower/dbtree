@@ -27,30 +27,21 @@ click==8.1.7
     #   csv-diff
     #   dbt-core
     #   dbt-semantic-interfaces
-    #   metricflow
     #   sqlfluff
 colorama==0.4.6
     # via
     #   dbt-core
-    #   halo
-    #   log-symbols
     #   sqlfluff
 csv-diff==1.1
 dbt-core==1.7.10
     # via
     #   dbt-duckdb
-    #   dbt-metricflow
-    #   metricflow
     #   sqlfluff-templater-dbt
 dbt-duckdb==1.7.3
-    # via dbt-metricflow
 dbt-extractor==0.5.1
     # via dbt-core
-dbt-metricflow==0.6.0
 dbt-semantic-interfaces==0.4.4
-    # via
-    #   dbt-core
-    #   metricflow
+    # via dbt-core
 dictdiffer==0.9.0
     # via csv-diff
 diff-cover==8.0.3
@@ -63,10 +54,6 @@ exceptiongroup==1.2.0
     # via pytest
 filelock==3.13.1
     # via virtualenv
-graphviz==0.20.1
-    # via metricflow
-halo==0.0.31
-    # via metricflow
 identify==2.5.35
     # via pre-commit
 idna==3.6
@@ -87,7 +74,6 @@ jinja2==3.1.3
     #   dbt-semantic-interfaces
     #   diff-cover
     #   jinja2-simple-tags
-    #   metricflow
     #   sqlfluff
 jinja2-simple-tags==0.6.1
     # via sqlfluff-templater-dbt
@@ -99,8 +85,6 @@ jsonschema-specifications==2023.12.1
     # via jsonschema
 leather==0.4.0
     # via agate
-log-symbols==0.0.14
-    # via halo
 logbook==1.5.3
     # via dbt-core
 markdown-it-py==3.0.0
@@ -113,28 +97,20 @@ mashumaro==3.12
     # via dbt-core
 mdurl==0.1.2
     # via markdown-it-py
-metricflow==0.205.0
-    # via dbt-metricflow
 minimal-snowplow-tracker==0.0.2
     # via dbt-core
 more-itertools==10.1.0
-    # via
-    #   dbt-semantic-interfaces
-    #   metricflow
+    # via dbt-semantic-interfaces
 msgpack==1.0.8
     # via mashumaro
 networkx==3.2.1
     # via dbt-core
 nodeenv==1.8.0
     # via pre-commit
-numpy==1.26.4
-    # via pandas
 packaging==24.0
     # via
     #   dbt-core
     #   pytest
-pandas==1.5.3
-    # via metricflow
 parsedatetime==2.6
     # via agate
 pathspec==0.11.2
@@ -155,7 +131,6 @@ pycparser==2.21
 pydantic==1.10.14
     # via
     #   dbt-semantic-interfaces
-    #   metricflow
     #   sqlfluff-templater-dbt
 pygments==2.17.2
     # via
@@ -164,27 +139,19 @@ pygments==2.17.2
 pytest==8.1.1
     # via sqlfluff
 python-dateutil==2.8.2
-    # via
-    #   dbt-semantic-interfaces
-    #   metricflow
-    #   pandas
+    # via dbt-semantic-interfaces
 python-slugify==8.0.4
     # via agate
 pytimeparse==1.1.8
     # via agate
 pytz==2024.1
-    # via
-    #   dbt-core
-    #   pandas
+    # via dbt-core
 pyyaml==6.0.1
     # via
     #   dbt-core
     #   dbt-semantic-interfaces
-    #   metricflow
     #   pre-commit
     #   sqlfluff
-rapidfuzz==3.6.2
-    # via metricflow
 referencing==0.34.0
     # via
     #   jsonschema
@@ -195,7 +162,6 @@ requests==2.31.0
     # via
     #   dbt-core
     #   minimal-snowplow-tracker
-    #   update-checker
 rich==13.7.1
     # via sqlfluff-templater-dbt
 rpds-py==0.18.0
@@ -203,32 +169,23 @@ rpds-py==0.18.0
     #   jsonschema
     #   referencing
 ruamel-yaml==0.17.40
-    # via
-    #   metricflow
-    #   sqlfluff-templater-dbt
+    # via sqlfluff-templater-dbt
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
 setuptools==69.2.0
     # via nodeenv
 six==1.16.0
     # via
-    #   halo
     #   isodate
     #   minimal-snowplow-tracker
     #   python-dateutil
-spinners==0.0.24
-    # via halo
 sqlfluff==3.0.1
     # via sqlfluff-templater-dbt
 sqlfluff-templater-dbt==3.0.1
 sqlparse==0.4.4
     # via dbt-core
-tabulate==0.9.0
-    # via metricflow
 tblib==3.0.0
     # via sqlfluff
-termcolor==2.4.0
-    # via halo
 text-unidecode==1.3
     # via python-slugify
 toml==0.10.2
@@ -242,11 +199,8 @@ typing-extensions==4.10.0
     #   dbt-core
     #   dbt-semantic-interfaces
     #   mashumaro
-    #   metricflow
     #   pydantic
     #   sqlfluff
-update-checker==0.18.0
-    # via metricflow
 urllib3==1.26.18
     # via
     #   dbt-core

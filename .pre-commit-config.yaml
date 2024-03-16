@@ -26,4 +26,8 @@ repos:
       - id: sqlfluff-fix
         args: ["./models/"]
         additional_dependencies:
-          ["dbt-duckdb~=1.7.1", "sqlfluff-templater-dbt~=3.0.1"]
+          [
+            "dbt-core~=1.7.10",
+            "dbt-duckdb~=1.7.3",
+            "sqlfluff-templater-dbt~=3.0.1",
+          ]
