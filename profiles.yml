@@ -6,4 +6,4 @@ dbtree:
     prod:
       type: duckdb
       path: md:dbtree
-  targt: dev
+  target: dev

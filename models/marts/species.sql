@@ -2,7 +2,7 @@ with
 
 trees as (
 
-    select *, from {{ ref('stg_sf_trees') }}
+    select *, from {{ ref('sf_trees') }}
 
 ),
 
@@ -13,10 +13,6 @@ species as (
         count(*) as count_of_trees,
 
     from trees
-
-    where
-        species is not null
-        and species != 'Tree(s) ::'
 
     group by 1
 
