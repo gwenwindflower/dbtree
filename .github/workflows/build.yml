@@ -22,6 +22,8 @@ jobs:
           python3 -m pip install uv
           uv pip install --system -r requirements.txt
       - name: Run Transformations
+        env:
+          MOTHERDUCK_TOKEN: ${{secrets.MOTHERDUCK_TOKEN}}
         run: |
           dbt deps
           dbt build --target prod
