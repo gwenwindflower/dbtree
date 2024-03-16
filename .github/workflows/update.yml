@@ -38,3 +38,4 @@ jobs:
           timestamp=$(date -u)
           git commit -F message.txt || exit 0
           git push
+        # TODO: add dbt build to MD on fresh data scrape
