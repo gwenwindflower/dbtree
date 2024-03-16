@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-    environment:
-      name: Workflows
+    env:
+      MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -22,8 +22,6 @@ jobs:
           python3 -m pip install uv
           uv pip install --system -r requirements.txt
       - name: Run Transformations
-        env:
-          MOTHERDUCK_TOKEN: ${{secrets.MOTHERDUCK_TOKEN}}
         run: |
           dbt deps
           dbt build --target prod

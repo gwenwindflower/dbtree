@@ -3,7 +3,6 @@ dbtree:
     dev:
       type: duckdb
       path: ./dbtree.db
-      threads: 8
     prod:
       type: duckdb
       path: md:dbtree
