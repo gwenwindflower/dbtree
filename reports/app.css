@@ -134,27 +134,27 @@
   }
 
   h1.title {
-    @apply mt-5 mb-1 text-2xl tracking-wide font-bold text-gray-800 break-inside-avoid;
+    @apply mt-5 mb-1 text-2xl tracking-wide font-bold text-emerald-900 break-inside-avoid;
   }
 
   h1.markdown,
   h1.markdown > a.markdown {
-    @apply mt-5 mb-1 text-2xl tracking-wide font-bold text-gray-800 break-inside-avoid;
+    @apply mt-5 mb-1 text-2xl tracking-wide font-bold text-emerald-800 break-inside-avoid;
   }
 
   h2.markdown,
   h2.markdown > a.markdown {
-    @apply mt-3 mb-1 text-xl font-semibold text-gray-800;
+    @apply mt-3 mb-1 text-xl font-semibold text-lime-800;
   }
 
   h3.markdown,
   h3.markdown > a.markdown {
-    @apply mt-2 mb-1 font-semibold text-base text-gray-800;
+    @apply mt-2 mb-1 font-semibold text-base text-emerald-800;
   }
 
   h4.markdown,
   h4.markdown > a.markdown {
-    @apply mt-1 text-sm  font-semibold text-gray-800;
+    @apply mt-1 text-sm  font-semibold text-green-700;
   }
 
   h5.markdown,

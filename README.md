@@ -1,11 +1,5 @@
-# sf-tree-history
+# 🌲🌳 dbtree 🚃🌉
 
-Tracking the history of trees in San Francisco.
+> This project is forked from the great [Simon Willison](https://github.com/simonw)'s git scraping project [sf-tree-history](https://github.com/simonw/sf-tree-history). The original project is a demonstration of how to use GitHub Actions to run a Python script that scrapes data from a website and commits the data to the repository, using Simon's `csv-diff` project to generate human readable commits on changes to the data. Git itself then acts as a versioned database for the data.
 
-Background: [Generating a commit log for San Francisco’s official list of trees](https://simonwillison.net/2019/Mar/13/tree-history/). See also [Git Scraping](https://simonwillison.net/2020/Oct/9/git-scraping/) for a description of the general technique.
-
-This repository [uses GitHub Actions](https://github.com/simonw/sf-tree-history/actions) to retrieve the [official CSV file of trees in San Francisco](https://data.sfgov.org/City-Infrastructure/Street-Tree-List/tkzw-k3nq) once a day and track any changes to it over time using the git commit history.
-
-It uses [csv-diff](https://github.com/simonw/csv-diff) to generate human-readable commit messages.
-
-You can see recent changes to the CSV file here: https://github.com/simonw/sf-tree-history/commits/main
+This project takes the original and builds a complete data stack on top of it. It uses a combination of `dbt`, `DuckDB` and `Evidence` to model and visualize the data.
