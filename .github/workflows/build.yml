@@ -7,20 +7,19 @@ on:
 
 jobs:
   build:
-    - name: Load data into MotherDuck
-      runs-on: macos-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4.1.1
-        - name: Setup Python
-          uses: actions/setup-python@v5.0.0
-          with:
-            python-version: "3.11.x"
-        - name: Install Python dependencies
-          run: |
-            python3 -m pip install uv
-            uv pip install --system -r requirements.txt
-        - name: Run Transformations
-          run: |
-            dbt deps
-            dbt build --target prod
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: "3.11.x"
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install uv
+          uv pip install --system -r requirements.txt
+      - name: Run Transformations
+        run: |
+          dbt deps
+          dbt build --target prod
