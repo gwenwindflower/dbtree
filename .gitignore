@@ -5,5 +5,9 @@ env
 __pycache__
 .pytest_cache
 
+dbt_packages
 target
 logs
+.user.yml
+
+dbtree.db

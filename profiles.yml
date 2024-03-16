@@ -4,7 +4,4 @@ dbtree:
     dev:
       type: duckdb
       path: ./dbtree.db
-      database: dbtree
-      schema: sf
       threads: 8
-

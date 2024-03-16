@@ -1,0 +1,8 @@
+sources:
+  - name: sf_trees
+    schema: raw
+    meta:
+      external_location: "data/{identifier}.csv"
+    tables:
+      - name: tree_list
+        identifier: Street_Tree_List
