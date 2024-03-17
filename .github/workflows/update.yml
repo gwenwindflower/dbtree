@@ -1,7 +1,9 @@
-name: Scrape latest data
+name: Refresh data
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "21 11 * * *"
@@ -38,4 +40,6 @@ jobs:
           timestamp=$(date -u)
           git commit -F message.txt || exit 0
           git push
-        # TODO: add dbt build to MD on fresh data scrape
+  build_to_md:
+    uses: .github/workflows/build.yml
+    needs: scheduled

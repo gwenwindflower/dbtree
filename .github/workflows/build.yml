@@ -1,9 +1,10 @@
 name: Load data into MotherDuck
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    secrets:
+      MOTHERDUCK_TOKEN:
+        required: true
 
 jobs:
   build:
