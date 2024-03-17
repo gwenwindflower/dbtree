@@ -60,9 +60,8 @@ dbt test
 npm --prefix ./reports run sources && npm --prefix ./reports run dev
 ```
 
-```
-
 ## More soon
 
 I like to write pretty extensive and beginner-friendly docs for my projects. This one will be no exception. More documentation is coming soon.
-```
+
+![image](https://github.com/gwenwindflower/dbtree/assets/91998347/2e30ad90-9222-438a-94f7-c645c0af0725)
