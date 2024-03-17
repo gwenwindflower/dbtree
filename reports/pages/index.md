@@ -41,7 +41,7 @@ where count_of_trees > 3000
   value="year"
 />
 <CalendarHeatmap
-    data={trees_planted_dynamic}
+    data={trees_planted_per_year}
     date="planted_at_date"
     value=count_of_trees
     title="Trees Planted"
@@ -50,7 +50,7 @@ where count_of_trees > 3000
     colorPalette={myColors}
 />
 
-```sql trees_planted_dynamic
+```sql trees_planted_per_year
 select
   planted_at_date,
   count(*) as count_of_trees,
@@ -87,6 +87,7 @@ order by 1 desc
   data={planted_at_species}
   value="species"
   title="Filter by species"
+  multiple=true
 />
 <BarChart
    data={trees_planted}
@@ -106,7 +107,7 @@ select
 from dbtree.trees
 
 where
-  friendly_name = $$${inputs.planted_at_species.value}$$ and
+  friendly_name in ${inputs.planted_at_species.value} and
   planted_at_date
     between
       '${inputs.planted_at_dates.start}' and
@@ -116,7 +117,10 @@ group by 1, 2
 ```
 
 ```sql planted_at_species
-select friendly_name as species
+select
+  $$friendly_name$$ as species
+
 from dbtree.species
+
 order by count_of_trees desc
 ```
