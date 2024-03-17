@@ -24,3 +24,5 @@ jobs:
         run: |
           dbt deps
           dbt build --target prod
+        with:
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
