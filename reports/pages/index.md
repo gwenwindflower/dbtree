@@ -106,7 +106,7 @@ select
 from dbtree.trees
 
 where
-  species = '${inputs.planted_at_species.value}' and
+  friendly_name = $$${inputs.planted_at_species.value}$$ and
   planted_at_date
     between
       '${inputs.planted_at_dates.start}' and
@@ -116,6 +116,7 @@ group by 1, 2
 ```
 
 ```sql planted_at_species
-select distinct species
-from dbtree.trees
+select friendly_name as species
+from dbtree.species
+order by count_of_trees desc
 ```

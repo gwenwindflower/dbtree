@@ -9,7 +9,7 @@ trees as (
 species as (
 
     select
-        species,
+        friendly_name,
         count(*) as count_of_trees,
 
     from trees

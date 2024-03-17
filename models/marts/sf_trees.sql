@@ -10,23 +10,27 @@ clean_up_species as (
 
     select
         tree_id,
-        legal_status,
-        address,
-        site_order,
         site_info,
-        plant_type,
+        site_order,
+        legal_status,
+        permit_notes,
         caretaker,
         care_assistant,
-        planted_at_date,
         plot_size,
-        permit_notes,
+        address,
+        zip_codes,
+        neighborhood,
+        location,
         x_coord,
         y_coord,
         latitude,
         longitude,
-        location,
-        zip_codes,
-        neighborhood,
+        planted_at_date,
+        case
+            when plant_type = 'Tree' or plant_type = 'tree' then 'tree'
+            when plant_type = 'Landscaping' then 'landscaping'
+            else 'unknown'
+        end as plant_type,
         case
             when
                 (
@@ -37,6 +41,9 @@ clean_up_species as (
                 then 'Unknown'
             else replace(species, ':: ', '')
         end as species,
+        split_part(species, ':: ', 1) as scientific_name,
+        split_part(species, ':: ', 2) as friendly_name,
+
 
     from sf_trees
 )

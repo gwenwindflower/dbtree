@@ -19,7 +19,7 @@ staged as (
         qcaretaker as caretaker,
         qcareassistant as care_assistant,
         plantdate as planted_at_date,
-        dbh,
+        dbh as depth_by_height,
         plotsize as plot_size,
         permitnotes as permit_notes,
         xcoord as x_coord,
@@ -30,6 +30,7 @@ staged as (
         "Fire Prevention Districts" as fire_prevention_districts,
         "Zip Codes" as zip_codes,
         "Analysis Neighborhoods" as neighborhood,
+
     from source
 
 )
