@@ -11,8 +11,6 @@ on:
 jobs:
   scheduled:
     runs-on: macos-latest
-    env:
-      MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -45,3 +43,5 @@ jobs:
   build_to_motherduck:
     uses: ./.github/workflows/build.yml
     needs: scheduled
+    with:
+      MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
