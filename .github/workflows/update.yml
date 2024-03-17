@@ -10,7 +10,7 @@ on:
 
 jobs:
   scheduled:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -40,6 +40,6 @@ jobs:
           timestamp=$(date -u)
           git commit -F message.txt || exit 0
           git push
-  build_to_md:
-    uses: .github/workflows/build.yml
+  build_to_motherduck:
+    uses: ./.github/workflows/build.yml
     needs: scheduled
