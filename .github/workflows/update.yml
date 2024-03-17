@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: "21 11 * * *"
 
+env:
+  MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
+
 jobs:
   scheduled:
     runs-on: macos-latest
@@ -43,5 +46,3 @@ jobs:
   build_to_motherduck:
     uses: ./.github/workflows/build.yml
     needs: scheduled
-    env:
-      MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
