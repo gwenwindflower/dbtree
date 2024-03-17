@@ -9,9 +9,9 @@ This project takes the original and builds a complete data stack on top of it. I
 1. [Setup](#setup)
 2. [Areas to explore](#areas-to-explore)
 3. [Tips](#tips)
-   1. [Python dependencies with `uv`](#python-dependencies-with-uv)
-   2. [Learning resources](#learning-resources)
-   3. [Improving the command line experience](#improving-the-command-line-experience)
+  1. [Python dependencies with `uv`](#python-dependencies-with-uv)
+  2. [Learning resources](#learning-resources)
+  3. [Improving the command line experience](#improving-the-command-line-experience)
 
 ## Setup
 
@@ -68,6 +68,14 @@ dbt test
 # Build and serve Evidence
 npm --prefix ./reports run sources && npm --prefix ./reports run dev
 ```
+
+## Production and CI setup
+
+The production version of this project is hosted on Netlify.
+
+## Updating the data
+
+The data updates via a [`curl`](https://tldr.inbrowser.app/pages/common/curl) command and some subsequent processing in a [`cron`](https://tldr.inbrowser.app/pages/common/cron)-schedule-triggered GitHub Action. Check out `.github/workflows/update.yml` to see what's happening. To get more details I highly recommend checking out Simon's blog post on [git scraping](https://simonwillison.net/2020/Oct/9/git-scraping/).
 
 ## Areas to explore
 
