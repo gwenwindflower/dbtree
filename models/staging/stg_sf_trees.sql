@@ -11,7 +11,6 @@ staged as (
     select
         treeid as tree_id,
         qlegalstatus as legal_status,
-        qspecies as species,
         qaddress as address,
         siteorder as site_order,
         qsiteinfo as site_info,
@@ -30,6 +29,16 @@ staged as (
         "Fire Prevention Districts" as fire_prevention_districts,
         "Zip Codes" as zip_codes,
         "Analysis Neighborhoods" as neighborhood,
+        case
+            when
+                (
+                    qspecies is null
+                    or qspecies = ''
+                    or qspecies = 'Tree(s) ::'
+                )
+                then 'Unknown:: Unknown'
+            else qspecies
+        end as species,
 
     from source
 

@@ -31,18 +31,8 @@ clean_up_species as (
             when plant_type = 'Landscaping' then 'landscaping'
             else 'unknown'
         end as plant_type,
-        case
-            when
-                (
-                    species is null
-                    or species = ''
-                    or species = 'Tree(s) ::'
-                )
-                then 'Unknown'
-            else replace(species, ':: ', '')
-        end as species,
-        split_part(species, ':: ', 1) as scientific_name,
-        split_part(species, ':: ', 2) as friendly_name,
+        split_part(species, ':: ', 1) as species_scientific_name,
+        split_part(species, ':: ', 2) as species_friendly_name,
 
 
     from sf_trees

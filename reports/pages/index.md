@@ -12,25 +12,33 @@ title: 🌲🌳 Trees of San Francisco 🚃🌉
     ]
 </script>
 
-## Species counts
+## Overview
 
-<BarChart
-  data={common_species_counts}
-  x="species"
-  y="count_of_trees"
-  title="Most common species"
-  subtitle="Species with more than 3000 trees"
-  colorPalette={myColors}
-/>
+### Common species
+
+The 3 most common species of trees in San Francisco are the <Value data={common_species_counts} column=species_friendly_name row=0 />, the <Value data={common_species_counts} column=species_friendly_name row=1 />, and the <Value data={common_species_counts} column=species_friendly_name row=2 />.
+
+- <BarChart
+    data={common_species_counts}
+    x="species_friendly_name"
+    y="count_of_trees"
+    title="Most common species"
+    subtitle="Species with more than 3000 trees"
+    colorPalette={myColors}
+  />
 
 ```sql common_species_counts
 select
-    species,
+    species_friendly_name,
     count_of_trees,
 
 from dbtree.species
 
-where count_of_trees > 3000
+where
+  count_of_trees > 3000 and
+  species_friendly_name != 'Unknown'
+
+order by count_of_trees desc
 ```
 
 ### Trees planted by year
@@ -77,6 +85,10 @@ where year is not null
 order by 1 desc
 ```
 
+### Species distribution
+
+In between <Value data={planted_at_date_range} column=start fmt='longdate' /> and <Value data={planted_at_date_range} column=end fmt='longdate' />, the most common species of trees planted were the <Value data={top_species_planted_in_date_range} column=species_friendly_name row=0 />, the <Value data={top_species_planted_in_date_range} column=species_friendly_name row=1 />, and the <Value data={top_species_planted_in_date_range} column=species_friendly_name row=2 />.
+
 <DateRange
   name="planted_at_dates"
   title="Planted between dates"
@@ -84,8 +96,8 @@ order by 1 desc
 />
 <Dropdown
   name="planted_at_species"
-  data={planted_at_species}
-  value="species"
+  data={unique_species}
+  value="species_friendly_name"
   title="Filter by species"
   multiple=true
 />
@@ -101,26 +113,47 @@ order by 1 desc
 ```sql trees_planted
 select
   date_trunc('month', planted_at_date) as planted_at_month,
-  species,
   count(*) as count_of_trees
 
 from dbtree.trees
 
 where
-  friendly_name in ${inputs.planted_at_species.value} and
+  species_friendly_name in ${inputs.planted_at_species.value} and
   planted_at_date
     between
       '${inputs.planted_at_dates.start}' and
       '${inputs.planted_at_dates.end}'
 
-group by 1, 2
+group by 1
 ```
 
-```sql planted_at_species
+```sql top_species_planted_in_date_range
 select
-  $$friendly_name$$ as species
+  species_friendly_name,
+  count(*) as count_of_trees
 
-from dbtree.species
+from dbtree.trees
 
+where
+  planted_at_date
+    between
+      '${inputs.planted_at_dates.start}' and
+      '${inputs.planted_at_dates.end}'
+
+  and species_friendly_name != 'Unknown'
+
+group by 1
+order by count_of_trees desc
+limit 3
+```
+
+```sql planted_at_date_range
+select
+  cast('${inputs.planted_at_dates.start}' as datetime) as start,
+  cast('${inputs.planted_at_dates.end}' as datetime) as end
+```
+
+```sql unique_species
+select * from dbtree.species
 order by count_of_trees desc
 ```
