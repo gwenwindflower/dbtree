@@ -9,7 +9,7 @@ on:
     - cron: "21 11 * * *"
 
 jobs:
-  scheduled:
+  scrape_fresh_data:
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -42,6 +42,6 @@ jobs:
           git push
   build_to_motherduck:
     uses: ./.github/workflows/build.yml
-    needs: scheduled
+    needs: scrape_fresh_data
     secrets:
       MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
