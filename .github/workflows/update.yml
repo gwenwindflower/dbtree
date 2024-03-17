@@ -43,5 +43,5 @@ jobs:
   build_to_motherduck:
     uses: ./.github/workflows/build.yml
     needs: scheduled
-    with:
+    env:
       MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
