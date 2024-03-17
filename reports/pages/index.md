@@ -18,14 +18,14 @@ title: 🌲🌳 Trees of San Francisco 🚃🌉
 
 The 3 most common species of trees in San Francisco are the <Value data={common_species_counts} column=species_friendly_name row=0 />, the <Value data={common_species_counts} column=species_friendly_name row=1 />, and the <Value data={common_species_counts} column=species_friendly_name row=2 />.
 
-- <BarChart
-    data={common_species_counts}
-    x="species_friendly_name"
-    y="count_of_trees"
-    title="Most common species"
-    subtitle="Species with more than 3000 trees"
-    colorPalette={myColors}
-  />
+<BarChart
+  data={common_species_counts}
+  x="species_friendly_name"
+  y="count_of_trees"
+  title="Most common species"
+  subtitle="Species with more than 3000 trees"
+  colorPalette={myColors}
+/>
 
 ```sql common_species_counts
 select
