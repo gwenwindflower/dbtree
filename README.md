@@ -9,9 +9,9 @@ This project takes the original and builds a complete data stack on top of it. I
 1. [Setup](#setup)
 2. [Areas to explore](#areas-to-explore)
 3. [Tips](#tips)
-  1. [Python dependencies with `uv`](#python-dependencies-with-uv)
-  2. [Learning resources](#learning-resources)
-  3. [Improving the command line experience](#improving-the-command-line-experience)
+   1. [Python dependencies with `uv`](#python-dependencies-with-uv)
+   2. [Learning resources](#learning-resources)
+   3. [Improving the command line experience](#improving-the-command-line-experience)
 
 ## Setup
 
