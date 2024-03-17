@@ -12,7 +12,7 @@ This project takes the original and builds a complete data stack on top of it. I
    1. [Python dependencies with `uv`](#python-dependencies-with-uv)
    2. [Learning resources](#learning-resources)
    3. [Improving the command line experience](#improving-the-command-line-experience)
-
+https://tldr.inbrowser.app/pages/common/curl
 ## Setup
 
 The easiest way to get started is with `task`. `task` is like `make`, but simpler and configured with nice, readable YAML (check out the Taskfile.yml to see what it looks like). You can read the detailed [installation instructions](https://taskfile.dev/#/installation), but for most systems it's as simple as:
@@ -70,8 +70,12 @@ npm --prefix ./reports run sources && npm --prefix ./reports run dev
 ```
 
 ## Production and CI setup
+The production version of this project is hosted on Netlify. The project is built and deployed automatically by Netlify when changes are pushed to the `main` branch.  Instead of building and hosting the DuckDB database inside of Netlify's servers, on a merge into `main`, we build the dbt project with the `--target prod`flag passed (`dbt build --target prod`), which will build the project with the production profile. This profile is configured to connect to MotherDuck, a SaaS version of DuckDB. This lets us develop locally with a purely local setup, but deploy to a production environment with a cloud-based warehouse. This hybrid approach is one of the unique strengths of DuckDB. You can examine the `.github/workflows/build.yml` and `profiles.yml` to see how this is achieved.
 
-The production version of this project is hosted on Netlify.
+> [!NOTE]
+> When you use a **connection string** as the path to your DuckDB database file that starts with `md:`, DuckDB will attempt to connect to MotherDuck. If you have an **environment variable** set to `MOTHERDUCK_TOKEN` with your MotherDuck authentication token, it will _automatically_ be included in that connection string to verify that you're allowed to connect to a specific instance of MotherDuck. So if you have a local environment variable and a secret set in GitHub's context in which it runs Actions (you can access this in Settings if you create a fork of this repo in which you're the owner) you can set this the same way. This is how we're authenticating for production, and why the connection string doesn't look like `md:dbtree?motherduck_token=<long string of secret stuff>`. _**Never**_ commit credentials to code, always use environment variables. And don't commit your environment variables settings in your repo either (always `.gitignore` files like `.env` that contain environment variables).
+
+CI is also handled by GitHub Actions. The CI workflow is configured to run builds of all parts of the project, lint the SQL, and run the dbt tests. If any of these fail, the build will fail and the pull request will not be mergeable. Check out `.github/workflows/ci.yml` to see how this is set up.
 
 ## Updating the data
 
