@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-yaml
         exclude: reports/evidence.plugins.yaml
@@ -8,7 +8,7 @@ repos:
       - id: trailing-whitespace
       - id: requirements-txt-fixer
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.3.3
+    rev: v0.4.9
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
@@ -17,11 +17,11 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: 24.3.0
+    rev: 24.4.2
     hooks:
       - id: black
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 3.0.1
+    rev: 3.0.7
     hooks:
       - id: sqlfluff-fix
         args: ["./models/"]
