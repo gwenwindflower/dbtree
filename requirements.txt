@@ -65,7 +65,7 @@ diff-cover==9.0.0
     # via sqlfluff
 distlib==0.3.8
     # via virtualenv
-duckdb==0.10.2
+duckdb==1.0.0
     # via
     #   -r requirements.in
     #   dbt-duckdb
