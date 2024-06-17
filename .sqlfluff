@@ -1,6 +1,6 @@
 [sqlfluff]
 dialect = duckdb
-templater = dbt
+# templater = dbt
 
 [sqlfluff:templater:dbt]
 profiles_dir = .
