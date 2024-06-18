@@ -36,6 +36,7 @@ clean_up_species as (
 
 
     from sf_trees
+
 )
 
 select *, from clean_up_species
