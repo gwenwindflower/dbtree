@@ -27,8 +27,8 @@ clean_up_species as (
         longitude,
         planted_at_date,
         case
-            when plant_type = 'Tree' or plant_type = 'tree' then 'tree'
-            when plant_type = 'Landscaping' then 'landscaping'
+            when plant_type ilike 'tree' then 'tree'
+            when plant_type ilike 'landscaping' then 'landscaping'
             else 'unknown'
         end as plant_type,
         split_part(species, ':: ', 1) as species_scientific_name,
@@ -36,6 +36,7 @@ clean_up_species as (
 
 
     from sf_trees
+
 )
 
 select *, from clean_up_species
