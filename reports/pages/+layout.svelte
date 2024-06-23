@@ -10,7 +10,7 @@
   title="🌲 dbtree 🌳"
   githubRepo="https://github.com/gwenwindflower/dbtree"
   builtWithEvidence={true}
-  logo="./logo.png"
+  logo="/logo.png"
 >
   <slot slot="content" />
 </EvidenceDefaultLayout>
