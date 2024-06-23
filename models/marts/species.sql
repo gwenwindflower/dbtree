@@ -10,11 +10,14 @@ species as (
 
     select
         species_friendly_name,
+        species_scientific_name,
+        'https://wikipedia.org/wiki/'
+        || replace(species_scientific_name, ' ', '_') as wikipedia_link,
         count(*) as count_of_trees,
 
     from trees
 
-    group by 1
+    group by 1, 2
 
 )
 

@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "name": "dbtree",
+            "accessMode": "Read Only",
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "databaseFilePath": "/Users/winnie/dev/dbtree/dbtree.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

@@ -48,6 +48,7 @@ order by count_of_trees desc
   data={trees_planted_years}
   value="year"
 />
+
 <CalendarHeatmap
     data={trees_planted_per_year}
     date="planted_at_date"
@@ -94,6 +95,7 @@ In between <Value data={planted_at_date_range} column=start fmt='longdate' /> an
   title="Planted between dates"
   dates=planted_at_month
 />
+
 <Dropdown
   name="planted_at_species"
   data={unique_species}
@@ -101,6 +103,7 @@ In between <Value data={planted_at_date_range} column=start fmt='longdate' /> an
   title="Filter by species"
   multiple=true
 />
+
 <BarChart
    data={trees_planted}
    x="planted_at_month"
