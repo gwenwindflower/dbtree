@@ -47,6 +47,7 @@ order by count_of_trees desc
   name="trees_planted_years"
   data={trees_planted_years}
   value="year"
+  defaultValue={2024}
 />
 
 <CalendarHeatmap
@@ -77,7 +78,7 @@ group by 1
 
 ```sql trees_planted_years
 select
-  distinct date_part('year', planted_at_date) as year
+  distinct date_part('year', planted_at_date)::int as year
 
 from dbtree.trees
 
