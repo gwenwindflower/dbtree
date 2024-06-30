@@ -1,7 +1,0 @@
-[00:00:00.002] (1ea5ccc00) ERROR  No configuration file found. Application may not behave as expected
-[00:00:00.002] (1ea5ccc00) INFO   Starting app..
-[00:00:05.601] (1ea5ccc00) INFO   Got action: Action(LoopOverTabs)
-[00:00:30.786] (1ea5ccc00) INFO   Got action: Action(BackLoopOverTabs)
-[00:00:49.512] (1ea5ccc00) INFO   Got action: Action(LoopOverTabs)
-[00:00:49.751] (1ea5ccc00) INFO   Got action: Action(LoopOverTabs)
-[00:01:02.985] (1ea5ccc00) INFO   Got action: Tui(Quit)
