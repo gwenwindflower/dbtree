@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is no longer active. I have other fun, active open-source data projects to explore though! Visit my profile to check some other options out.
+
 # 🌲🌳 dbtree 🚃🌉
 [![Refresh data](https://github.com/gwenwindflower/dbtree/actions/workflows/update.yml/badge.svg)](https://github.com/gwenwindflower/dbtree/actions/workflows/update.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5e781b47-3433-4cc7-b2a1-4ad9712e5da8/deploy-status)](https://app.netlify.com/sites/dbtree/deploys)
